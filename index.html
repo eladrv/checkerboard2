@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkerboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='style.css') }}">
+    <style>
+        table tr td{
+            width:50px;
+            height:50px;
+        }
+        .color1{
+            background-color:blue;
+        }
+        .color1{
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Checkerboard</h1>
+
+<div>
+    {% for i in range(y) %}
+    {% if loop.index is odd %}
+    <div class="row justify-content-center">
+        {% for j in range(x) %}
+        {% if loop.index is odd %}
+        <div class ="color-one box"></div>
+        {% else %}
+        <div class="color-two box"></div>
+        {% endif %}
+        {% endfor %}
+
+</div>
+
+{% else %}
+<div class="row justify-content-center">
+    {% for k in range(x) %}
+    {% if loop.index is odd %}
+    <div class ="color-two box"></div>
+    {% else %}
+    <div class="color-one box"></div>
+    {% endif %}
+    {% endfor %}
+
+</div>
